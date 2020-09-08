@@ -13,7 +13,7 @@ def create_db():
 
 @cli.command('seed_db')
 def seed_db():
-    db.session.add(User(email="example@user.com"))
+    db.session.add(User(email='example@user.com'))
     db.session.commit()
 
 if __name__ == '__main__':

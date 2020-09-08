@@ -6,13 +6,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config.from_object("project.config.Config")
+app.config.from_object('project.config.Config')
 db = SQLAlchemy(app)
 
 
 # Example table
 class User(db.Model):
-    __tablename__ = "users"
+    __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(128), unique=True, nullable=False)
@@ -29,12 +29,12 @@ def hello_world():
 
 @app.route('/static/<path:filename>')
 def static_files(filename):
-    return send_from_directory(app.config["STATIC_FOLDER"], filename)
+    return send_from_directory(app.config['STATIC_FOLDER'], filename)
 
 
 @app.route('/media/<path:filename>')
 def media_files(filename):
-    return send_from_directory(app.config["MEDIA_FOLDER"], filename)
+    return send_from_directory(app.config['MEDIA_FOLDER'], filename)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
