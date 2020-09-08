@@ -1,8 +1,8 @@
 import os
 
-from werkzeug.utils import secure_filename 
-from flask import Flask, send_from_directory, request 
-from flask_sqlalchemy import SQLAlchemy 
+from werkzeug.utils import secure_filename
+from flask import Flask, send_from_directory, request
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
@@ -43,7 +43,7 @@ def upload_file():
         file = request.files['file']
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['MEDIA_FOLDER'], filename))
-    return f'''
+    return '''
         <!doctype html>
         <title>upload new file</title>
         <form action="" method=post enctype=multipart/form-data>
