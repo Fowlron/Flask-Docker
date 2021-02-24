@@ -4,7 +4,7 @@ A starting point to develop flask websites. Made mostly thanks to [this](https:/
 # Technology Stack
 The development environment uses flask's built-in server to serve both dynamic and static pages and postgres with sqlalchemy for databases.
 
-The development environment uses nginx, gunicorn and flask, with postgres and sqlalchemy for databases.
+The production environment uses nginx, gunicorn and flask, with postgres and sqlalchemy for databases.
 
 # Development
 On run, the development environment will recreate and seed the databases by executing `python manage.py create_db` and `python manage.py seed_db`. Make sure those functions exist.
